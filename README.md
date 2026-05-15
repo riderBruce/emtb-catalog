@@ -181,3 +181,21 @@ After the import, the application should be able to read the bike data from Mong
 - Both client and server must be running for full functionality
 - Validation is enforced with Zod schemas
 - The project prioritizes structure and correctness over visual complexity
+
+## Screenshots
+
+### Home / Bike Catalog Page
+
+![Home bike catalog page](./screenshots/01-home-bike-catalog.png)
+
+### Add Bike Form
+
+![Add bike form](./screenshots/02-add-bike-form.png)
+
+### Weather Feature
+
+![Weather feature](./screenshots/03-weather-feature.png)
+
+### Code Structure and Main App Logic
+
+![Code structure and App.tsx logic](./screenshots/04-code-structure-app.tsx.png)
