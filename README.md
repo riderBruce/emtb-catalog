@@ -1,5 +1,62 @@
 # e-Mountain Bike Catalog
 
+## Live Demo
+
+The application is deployed on Render with the frontend and backend hosted separately.
+
+- **Live Application:** https://emtb-catalog-client.onrender.com
+- **Backend API:** https://emtb-catalog.onrender.com
+- **Bikes API:** https://emtb-catalog.onrender.com/api/bikes
+
+> **Note:** The backend is hosted on Render's free tier. The first request may take a few moments if the service has been inactive.
+
+## Local Development
+
+### MongoDB Setup
+
+For local development, use MongoDB Compass to import the sample bike catalog.
+
+The sample dataset is provided in `emtbCatalog.json` in the project root directory.
+
+1. Open MongoDB Compass.
+2. Create a database and collection with the following values:
+   - **Database:** `bike_catalog`
+   - **Collection:** `bikes`
+3. Open the `bikes` collection.
+4. Select **Add Data** → **Import JSON or CSV file**.
+5. Select `emtbCatalog.json` from the project root.
+6. Import the data.
+
+After importing the dataset, configure the server's MongoDB connection in the `.env` file.
+
+### Local URLs
+
+When running the application locally:
+
+- **Client:** `http://localhost:5173`
+- **Server:** `http://localhost:5000`
+- **Bikes API:** `http://localhost:5000/api/bikes`
+
+### Environment Variables
+
+The server requires a MongoDB connection string:
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+```
+
+The client can use the following environment variable to specify the API server:
+
+```env
+VITE_API_URL=http://localhost:5000
+```
+
+For deployment, `VITE_API_URL` should point to the deployed backend instead:
+
+```env
+VITE_API_URL=https://emtb-catalog.onrender.com
+```
+
 ### 0. Project Motivation
 
 - Built from a rider’s perspective as an e-mountain bike catalog
@@ -153,28 +210,6 @@
 npm run install:all
 npm run dev
 ```
-
-## MongoDB Compass Setup
-
-Use the `emtbCatalog.json` file located in the root folder.
-
-1. Open MongoDB Compass.
-2. Create a new database with the following values:
-   - **Database Name:** `bike_catalog`
-   - **Collection Name:** `bikes`
-
-3. Open the `bikes` collection.
-4. Click **Add Data** > **Import JSON or CSV file**.
-5. Select `emtbCatalog.json` from the root folder.
-6. Import the file.
-
-After the import, the application should be able to read the bike data from MongoDB.
-
-## Local URLs
-
-- **Server:** `http://localhost:5000`
-- **API Base Route:** `http://localhost:5000/api/bikes`
-- **Client:** `http://localhost:5173`
 
 ## Notes
 
